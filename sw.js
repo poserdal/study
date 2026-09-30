@@ -1,5 +1,5 @@
 // Only change this if the icons or manifest change. Content edits to index.html never need it.
-const CACHE = 'tq-static-v1';
+const CACHE = 'tq-static-v2';
 const STATIC = [
   './manifest.webmanifest',
   './icons/icon-192.png',

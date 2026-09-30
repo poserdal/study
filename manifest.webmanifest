@@ -1,12 +1,12 @@
 {
-  "name": "The Question: a year of daily study",
-  "short_name": "The Question",
+  "name": "Study Better: weekly study guide",
+  "short_name": "Study Better",
   "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#FAFAF7",
-  "theme_color": "#2F5D50",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "icons": [
     { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },

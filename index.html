@@ -8,11 +8,11 @@
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="The Question">
+<meta name="apple-mobile-web-app-title" content="Study Better">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#15191C" media="(prefers-color-scheme: dark)">
-<title>The Question: a year of daily study</title>
+<title>Study Better: weekly study guide</title>
 <style>
 :root{
   --bg:#FAFAF7; --ink:#22262A; --muted:#6B7078; --line:#DCDCD5; --soft:#EFEFE9;
@@ -202,9 +202,9 @@ function readItem(r, w, d){
 var app=document.getElementById('app'), navEl=document.getElementById('nav');
 function nav(cur){
   var items=[['#/','Today'],['#/week','This week'],['#/questions','All 52'],['#/journal','Journal'],['#/settings','Settings']];
-  navEl.innerHTML='<a class="brand" href="#/">The Question</a>'+items.map(function(i){return '<a href="'+i[0]+'"'+(cur===i[1]?' class="on"':'')+'>'+i[1]+'</a>';}).join('');
+  navEl.innerHTML='<a class="brand" href="#/">Study Better</a>'+items.map(function(i){return '<a href="'+i[0]+'"'+(cur===i[1]?' class="on"':'')+'>'+i[1]+'</a>';}).join('');
 }
-function setView(html,title){ app.innerHTML='<div class="fade">'+html+'</div>'; document.title=(title?title+' · ':'')+'The Question'; window.scrollTo(0,0); }
+function setView(html,title){ app.innerHTML='<div class="fade">'+html+'</div>'; document.title=(title?title+' · ':'')+'Study Better'; window.scrollTo(0,0); }
 
 function firstRun(){
   return '<h1 class="q">A year of one question a week.</h1>'+
@@ -324,19 +324,19 @@ function applyTheme(){ var t=lsGet('theme',''); if(t) document.documentElement.s
 /* install + backup */
 var deferredPrompt=null;
 window.addEventListener('beforeinstallprompt',function(e){ e.preventDefault(); deferredPrompt=e; var slot=document.getElementById('instslot'); if(slot) fillInstallSlot(slot); });
-window.addEventListener('appinstalled',function(){ deferredPrompt=null; if(document.getElementById('instslot')) setView('<h1 class="q">Installed.</h1><div class="prose"><p>Open The Question from your home screen or app list. You can close this tab.</p></div>','Installed'); });
+window.addEventListener('appinstalled',function(){ deferredPrompt=null; if(document.getElementById('instslot')) setView('<h1 class="q">Installed.</h1><div class="prose"><p>Open Study Better from your home screen or app list. You can close this tab.</p></div>','Installed'); });
 function isInstalled(){ return (window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true; }
 function platform(){ var ua=navigator.userAgent||''; if(/iPad|iPhone|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1)) return 'ios'; if(/Android/i.test(ua)) return 'android'; return 'desktop'; }
 function fillInstallSlot(slot){ if(!deferredPrompt) return; slot.innerHTML='<div class="row"><button class="btn" id="instbtn">Install</button></div>'; document.getElementById('instbtn').onclick=function(){ var e=deferredPrompt; if(!e) return; e.prompt(); e.userChoice.then(function(){ deferredPrompt=null; }); }; }
 function installSteps(pl){
-  if(pl==='ios') return '<h3 class="sec">On iPhone or iPad</h3><ol class="arc"><li>Tap the Share button (the square with the arrow).</li><li>Scroll down and tap Add to Home Screen.</li><li>Tap Add.</li><li>Close this tab and open The Question from your home screen.</li></ol><p class="help">Don\u2019t see Add to Home Screen? You\u2019re probably inside another app\u2019s browser. Tap the three dots (or the Safari icon) and choose Open in Safari, then try again.</p>';
-  if(pl==='android') return '<h3 class="sec">On Android</h3><ol class="arc"><li>Tap the menu (three dots) in Chrome.</li><li>Tap Add to Home screen or Install app.</li><li>Open The Question from your home screen.</li></ol><p class="help">Don\u2019t see it? Tap the three dots and choose Open in Chrome, then try again.</p>';
+  if(pl==='ios') return '<h3 class="sec">On iPhone or iPad</h3><ol class="arc"><li>Tap the Share button (the square with the arrow).</li><li>Scroll down and tap Add to Home Screen.</li><li>Tap Add.</li><li>Close this tab and open Study Better from your home screen.</li></ol><p class="help">Don\u2019t see Add to Home Screen? You\u2019re probably inside another app\u2019s browser. Tap the three dots (or the Safari icon) and choose Open in Safari, then try again.</p>';
+  if(pl==='android') return '<h3 class="sec">On Android</h3><ol class="arc"><li>Tap the menu (three dots) in Chrome.</li><li>Tap Add to Home screen or Install app.</li><li>Open Study Better from your home screen.</li></ol><p class="help">Don\u2019t see it? Tap the three dots and choose Open in Chrome, then try again.</p>';
   return '<h3 class="sec">On a computer</h3><div class="prose"><p>In Chrome or Edge, click the install icon at the right end of the address bar. In Safari on a Mac, choose File, then Add to Dock.</p></div>';
 }
 function viewInstall(gate){
-  if(gate){ navEl.innerHTML='<span class="brand">The Question</span>'; } else nav('');
+  if(gate){ navEl.innerHTML='<span class="brand">Study Better</span>'; } else nav('');
   if(isInstalled()){
-    setView('<h1 class="q">You\u2019re all set.</h1><div class="prose"><p>The Question is already on your home screen, and you\u2019re using it from there.</p></div><div class="row"><a class="btn" href="#/">Go to today</a></div>','Add to home screen');
+    setView('<h1 class="q">You\u2019re all set.</h1><div class="prose"><p>Study Better is already on your home screen, and you\u2019re using it from there.</p></div><div class="row"><a class="btn" href="#/">Go to today</a></div>','Add to home screen');
     return;
   }
   var pl=platform(), others=['ios','android','desktop'].filter(function(x){return x!==pl;});
@@ -354,23 +354,23 @@ function viewInstall(gate){
 }
 function hasNotes(){ try{ for(var i=0;i<localStorage.length;i++){ var k=localStorage.key(i); if(k&&(k.indexOf(LS+'j.')===0||k.indexOf(LS+'talk.')===0)){ var v=localStorage.getItem(k); if(v&&v!=='""') return true; } } }catch(e){} return false; }
 function backupDue(){ if(!hasNotes()) return false; var lb=lsGet('lastBackup',''); if(!lb) return true; return (Date.now()-new Date(lb).getTime())>30*864e5; }
-function backupName(){ var d=new Date(), z=function(n){return (n<10?'0':'')+n;}; return 'the-question-backup-'+d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate())+'.json'; }
-function buildBackup(){ var data={}; for(var i=0;i<localStorage.length;i++){ var k=localStorage.key(i); if(k&&k.indexOf(LS)===0&&k!==LS+'lastBackup') data[k]=localStorage.getItem(k); } return JSON.stringify({app:'the-question',version:1,exported:new Date().toISOString(),data:data},null,1); }
+function backupName(){ var d=new Date(), z=function(n){return (n<10?'0':'')+n;}; return 'study-better-backup-'+d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate())+'.json'; }
+function buildBackup(){ var data={}; for(var i=0;i<localStorage.length;i++){ var k=localStorage.key(i); if(k&&k.indexOf(LS)===0&&k!==LS+'lastBackup') data[k]=localStorage.getItem(k); } return JSON.stringify({app:'study-better',version:1,exported:new Date().toISOString(),data:data},null,1); }
 function markBackedUp(){ lsSet('lastBackup',new Date().toISOString()); if((location.hash||'').indexOf('#/settings')===0) viewSettings(); }
 function downloadBackup(json,name){ var blob=new Blob([json],{type:'application/json'}); var url=URL.createObjectURL(blob); var a=document.createElement('a'); a.href=url; a.download=name; document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); },1000); markBackedUp(); }
 function saveBackup(){
   var json=buildBackup(), name=backupName(), file=null;
   try{ file=new File([json],name,{type:'application/json'}); }catch(e){}
   if(file&&navigator.canShare&&navigator.canShare({files:[file]})){
-    navigator.share({files:[file],title:'The Question backup'}).then(markBackedUp).catch(function(err){ if(!err||err.name!=='AbortError') downloadBackup(json,name); });
+    navigator.share({files:[file],title:'Study Better backup'}).then(markBackedUp).catch(function(err){ if(!err||err.name!=='AbortError') downloadBackup(json,name); });
   } else downloadBackup(json,name);
 }
 function restoreBackup(file){
   var r=new FileReader();
   r.onload=function(){
     var o=null; try{ o=JSON.parse(r.result); }catch(e){}
-    var ok=o&&o.app==='the-question'&&o.data&&typeof o.data==='object'&&!Array.isArray(o.data)&&Object.keys(o.data).every(function(k){ return k.indexOf(LS)===0&&typeof o.data[k]==='string'; });
-    if(!ok){ alert('That file isn\u2019t a backup from The Question.'); return; }
+    var ok=o&&o.app==='study-better'&&o.data&&typeof o.data==='object'&&!Array.isArray(o.data)&&Object.keys(o.data).every(function(k){ return k.indexOf(LS)===0&&typeof o.data[k]==='string'; });
+    if(!ok){ alert('That file isn\u2019t a backup from Study Better.'); return; }
     if(!confirm('This will replace the notes on this device with the ones in the backup. Continue?')) return;
     try{ Object.keys(o.data).forEach(function(k){ localStorage.setItem(k,o.data[k]); }); }catch(e){ alert('Couldn\u2019t restore. Your device may be out of storage space.'); return; }
     location.reload();
