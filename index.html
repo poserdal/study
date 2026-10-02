@@ -3,10 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Question of the Week</title>
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAABvElEQVR4nO3ZMY7CMBAFUHtMTYG4ABRItLS5RE5AR0VJlwYEEl0iwRG4AKJAouY8UEABCMX5W4yUYtllFzvCu9K8knic+XZC4SglhBBCCCH+LV3BFNp9EgD+DXgxxgQsV547oLUGYIyp1+sO5efz2VrLk7j34FxJREVR9Pv9JEmazabW+vfPEgAAh8NhPp+vViueyrkTF7z1URTBWxRFyuNZIrcyXuw4jgHc73e31rkwjmPl8U9QcytjxhitNRG53Z4LPd9jxx34OyRAaBIgNAkQmgQITQKEJgFCkwChSYDQJEBoEiA0r1OJRwCKoiD6el34ks9Z6qMqA1hrjTFPjkn4Eg+r6qbVBOCFN8ZcLpfJZLLf7z+dePKq93q92WzWaDSstd/t0pvUajWlVJZlAG63G5+07Xa7brf7vLDVam02Gx5/vV4BZFlWTvg+fL80TfM8B3A6nYbDYXmJiMwDIiq7HAwGx+MRQJ7naZoGC7BYLABst9tOp6OUIqIfH4xyTLvdXq/XAJbLpXp/AH4Lp9NpkiT8y0sdlINHo9F4PFZVfOlwwX3w+e6rteX/aZjWS8E/MQkhhBBCCBHOBzmDG/++SrCqAAAAAElFTkSuQmCC">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="apple-mobile-web-app-title" content="Question of the Week">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Study Better">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15191C" media="(prefers-color-scheme: dark)">
+<title>Study Better: weekly study guide</title>
 <style>
 :root{
   --bg:#FAFAF7; --ink:#22262A; --muted:#6B7078; --line:#DCDCD5; --soft:#EFEFE9;
@@ -46,6 +52,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 /* type */
 .kicker{font-size:14px;color:var(--muted);margin:0 0 10px;}
 .kicker a{color:var(--muted);}
+.qlabel{font-size:13px;font-weight:600;color:var(--accent);margin:0 0 6px;letter-spacing:.02em;}
 h1.q{font-family:var(--serif);font-weight:700;font-size:clamp(30px,6.4vw,42px);line-height:1.12;letter-spacing:-0.01em;margin:0 0 14px;}
 h2.dq{font-family:var(--serif);font-style:normal;font-weight:600;font-size:clamp(22px,4.6vw,27px);line-height:1.25;margin:34px 0 12px;color:var(--ink);}
 .prose{font-family:var(--serif);font-size:18px;line-height:1.6;}
@@ -111,6 +118,13 @@ input[type=text],input[type=date],select{font:inherit;padding:9px 10px;border:1p
 .arc li{font-family:var(--serif);font-size:17px;padding:5px 0 5px 34px;position:relative;}
 .arc li::before{counter-increment:d;content:counter(d);position:absolute;left:0;color:var(--muted);font-family:var(--sans);font-size:13px;top:9px;}
 .small{font-size:14px;color:var(--muted);}
+.inst h3.sec{margin-top:26px;}
+.inst .notice{margin-top:22px;}
+.inst .arc li{font-size:18px;}
+details.other{margin-top:28px;border-top:1px solid var(--line);padding-top:14px;}
+details.other summary{cursor:pointer;font-size:15px;color:var(--accent);font-weight:500;}
+.linkbtn{color:var(--accent);font-size:15px;font-weight:500;padding:10px 0;}
+.bk{margin-top:4px;}
 @media (prefers-reduced-motion: no-preference){ .fade{animation:fade .25s ease-out;} @keyframes fade{from{opacity:0}to{opacity:1}} }
 </style>
 </head>
@@ -189,9 +203,9 @@ function readItem(r, w, d){
 var app=document.getElementById('app'), navEl=document.getElementById('nav');
 function nav(cur){
   var items=[['#/','Today'],['#/week','This week'],['#/questions','All 52'],['#/journal','Journal'],['#/settings','Settings']];
-  navEl.innerHTML='<a class="brand" href="#/">Question of the Week</a>'+items.map(function(i){return '<a href="'+i[0]+'"'+(cur===i[1]?' class="on"':'')+'>'+i[1]+'</a>';}).join('');
+  navEl.innerHTML='<a class="brand" href="#/">Study Better</a>'+items.map(function(i){return '<a href="'+i[0]+'"'+(cur===i[1]?' class="on"':'')+'>'+i[1]+'</a>';}).join('');
 }
-function setView(html,title){ app.innerHTML='<div class="fade">'+html+'</div>'; document.title=(title?title+' · ':'')+'Question of the Week'; window.scrollTo(0,0); }
+function setView(html,title){ app.innerHTML='<div class="fade">'+html+'</div>'; document.title=(title?title+' · ':'')+'Study Better'; window.scrollTo(0,0); }
 
 function firstRun(){
   return '<h1 class="q">A year of one question a week.</h1>'+
@@ -210,6 +224,7 @@ function viewToday(){
     return;
   }
   viewDay(pos.w,pos.d,true);
+  if(backupDue()){ var fd=app.querySelector('.fade'); if(fd){ var bp=document.createElement('p'); bp.className='help'; bp.style.marginTop='28px'; bp.innerHTML='It\u2019s been a while since you backed up your notes. <a href="#/settings">Save a backup</a>'; fd.appendChild(bp); } }
 }
 function arcHtml(){ return '<h3 class="sec">Every week follows the same seven days</h3><ol class="arc">'+ARC.map(function(a){return '<li>'+esc(a)+'</li>';}).join('')+'</ol>'; }
 
@@ -219,7 +234,7 @@ function viewDay(w,d,isToday){
   var pos=position(), reallyToday=!pos.before&&!pos.after&&pos.w===w&&pos.d===d;
   var h='';
   h+='<p class="kicker">'+(reallyToday?'Today, ':'')+fmtDate(dateOf(w,d))+' &nbsp;·&nbsp; <a href="#/week/'+w+'">Week '+w+'</a>, Day '+d+' of 7'+(W.tag?'<span class="tag">'+tagLabel(W.tag)+'</span>':'')+'</p>';
-  h+='<h1 class="q">'+md(W.question)+'</h1>';
+  h+='<p class="qlabel">Question of the week</p><h1 class="q">'+md(W.question)+'</h1>';
   if(d===1) h+='<div class="weekintro">'+paras(W.intro)+'</div>';
   if(W.placeholder){
     var t=lsGet(talkKey(w),'');
@@ -246,7 +261,7 @@ function viewWeek(w){
   var W=week(w); if(!W){ location.hash='#/'; return; }
   var pos=position();
   var h='<p class="kicker">Week '+w+' of 52 &nbsp;·&nbsp; '+fmtDate(dateOf(w,1))+(W.tag?'<span class="tag">'+tagLabel(W.tag)+'</span>':'')+'</p>';
-  h+='<h1 class="q">'+md(W.question)+'</h1><div class="weekintro">'+paras(W.intro)+'</div>';
+  h+='<p class="qlabel">Question of the week</p><h1 class="q">'+md(W.question)+'</h1><div class="weekintro">'+paras(W.intro)+'</div>';
   h+='<h3 class="sec">Seven days</h3><ul class="days">'+W.days.map(function(D,i){ var d=i+1, cur=!pos.before&&!pos.after&&pos.w===w&&pos.d===d;
     return '<li><span class="n">'+d+'</span><a class="t" href="#/w/'+w+'/d/'+d+'">'+md(D.q)+'</a><span>'+(done(w,d)?'<span class="done">Done</span>':(cur?'<span class="today">Today</span>':''))+'</span></li>'; }).join('')+'</ul>';
   h+='<div class="pager"><span>'+(w>1?'<a href="#/week/'+(w-1)+'">Week '+(w-1)+'</a>':'')+'</span><span>'+(w<52?'<a href="#/week/'+(w+1)+'">Week '+(w+1)+'</a>':'')+'</span></div>';
@@ -290,9 +305,15 @@ function viewSettings(){
   h+='<label class="f" for="newp">Add a person</label><input type="text" id="newp" placeholder="First name"><div class="row"><button class="btn quiet" id="addp">Add</button></div>';
   h+='<label class="f" for="sd">Program start date</label><input type="date" id="sd" value="'+esc(startDate())+'"><div class="row"><button class="btn quiet" id="sdsave">Save date</button><button class="btn quiet" id="sdreset">Reset to Jan 1, 2027</button></div>';
   h+='<p class="help">Today\u2019s page is figured from this date. Set it to today if you want to test from Week 1 right now. Day 1 of each week lands on the weekday you pick here.</p>';
+  h+='<label class="f">Back up your notes</label><p class="help">Your notes only live on this device. If you clear your browser data or get a new phone, they\u2019re gone. Save a backup file every so often and keep it somewhere safe, like email or iCloud.</p><p class="help">Last backup: '+esc(lastBackupText())+'</p><div class="row bk"><button class="btn quiet" id="bksave">Save a backup</button><button class="btn quiet" id="bkload">Restore from a backup</button></div><input type="file" id="bkfile" accept="application/json,.json" hidden>';
+  if(!isInstalled()) h+='<p class="help" style="margin-top:14px"><a href="#/install">Add this to your home screen</a></p>';
   h+='<label class="f" for="th">Theme</label><select id="th"><option value="">Match my device</option><option value="light">Light</option><option value="dark">Dark</option></select>';
   h+='<h3 class="sec">About</h3><p class="small">Fifty-two questions, seven days each, ten minutes a day. Sources: the New Testament, the Book of Mormon, the Doctrine and Covenants, the Old Testament and Pearl of Great Price, Preach My Gospel, and general conference. Scripture and talk links open a search on churchofjesuschrist.org.</p>'+arcHtml();
   setView(h,'Settings');
+  document.getElementById('bksave').onclick=saveBackup;
+  var bf=document.getElementById('bkfile');
+  document.getElementById('bkload').onclick=function(){ bf.value=''; bf.click(); };
+  bf.onchange=function(){ if(bf.files&&bf.files[0]) restoreBackup(bf.files[0]); };
   var th=document.getElementById('th'); th.value=lsGet('theme',''); th.onchange=function(){ lsSet('theme',th.value); applyTheme(); };
   document.getElementById('ppl').onclick=function(e){ var b=e.target.closest('button'); if(!b) return; lsSet('me',b.getAttribute('data-n')); viewSettings(); };
   document.getElementById('addp').onclick=function(){ var n=document.getElementById('newp').value.trim(); if(!n) return; var pp=people(); if(pp.indexOf(n)<0) pp.push(n); lsSet('people',pp); lsSet('me',n); viewSettings(); };
@@ -301,8 +322,68 @@ function viewSettings(){
 }
 function applyTheme(){ var t=lsGet('theme',''); if(t) document.documentElement.setAttribute('data-theme',t); else document.documentElement.removeAttribute('data-theme'); }
 
+/* install + backup */
+var deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',function(e){ e.preventDefault(); deferredPrompt=e; var slot=document.getElementById('instslot'); if(slot) fillInstallSlot(slot); });
+window.addEventListener('appinstalled',function(){ deferredPrompt=null; if(document.getElementById('instslot')) setView('<h1 class="q">Installed.</h1><div class="prose"><p>Open Study Better from your home screen or app list. You can close this tab.</p></div>','Installed'); });
+function isInstalled(){ return (window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true; }
+function platform(){ var ua=navigator.userAgent||''; if(/iPad|iPhone|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1)) return 'ios'; if(/Android/i.test(ua)) return 'android'; return 'desktop'; }
+function fillInstallSlot(slot){ if(!deferredPrompt) return; slot.innerHTML='<div class="row"><button class="btn" id="instbtn">Install</button></div>'; document.getElementById('instbtn').onclick=function(){ var e=deferredPrompt; if(!e) return; e.prompt(); e.userChoice.then(function(){ deferredPrompt=null; }); }; }
+function installSteps(pl){
+  if(pl==='ios') return '<h3 class="sec">On iPhone or iPad</h3><ol class="arc"><li>Tap the Share button (the square with the arrow).</li><li>Scroll down and tap Add to Home Screen.</li><li>Tap Add.</li><li>Close this tab and open Study Better from your home screen.</li></ol><p class="help">Don\u2019t see Add to Home Screen? You\u2019re probably inside another app\u2019s browser. Tap the three dots (or the Safari icon) and choose Open in Safari, then try again.</p>';
+  if(pl==='android') return '<h3 class="sec">On Android</h3><ol class="arc"><li>Tap the menu (three dots) in Chrome.</li><li>Tap Add to Home screen or Install app.</li><li>Open Study Better from your home screen.</li></ol><p class="help">Don\u2019t see it? Tap the three dots and choose Open in Chrome, then try again.</p>';
+  return '<h3 class="sec">On a computer</h3><div class="prose"><p>In Chrome or Edge, click the install icon at the right end of the address bar. In Safari on a Mac, choose File, then Add to Dock.</p></div>';
+}
+function viewInstall(gate){
+  if(gate){ navEl.innerHTML='<span class="brand">Study Better</span>'; } else nav('');
+  if(isInstalled()){
+    setView('<h1 class="q">You\u2019re all set.</h1><div class="prose"><p>Study Better is already on your home screen, and you\u2019re using it from there.</p></div><div class="row"><a class="btn" href="#/">Go to today</a></div>','Add to home screen');
+    return;
+  }
+  var pl=platform(), others=['ios','android','desktop'].filter(function(x){return x!==pl;});
+  var h='<div class="inst"><h1 class="q">Add this to your home screen first.</h1>';
+  h+='<div class="prose"><p>This works like an app. Adding it to your home screen gives you an icon, lets it work offline, and keeps your notes safe if you miss a stretch of days. It takes about 10 seconds.</p></div>';
+  h+='<div id="instslot"></div>';
+  h+=installSteps(pl);
+  h+='<p class="notice warn">Start your notes after you add it. Notes written here in the browser won\u2019t show up in the home screen version.</p>';
+  if(gate) h+='<button class="linkbtn" id="skip">Keep using it in the browser</button>';
+  h+='<details class="other"><summary>Using a different device?</summary>'+others.map(installSteps).join('')+'</details></div>';
+  setView(h,'Add to home screen');
+  fillInstallSlot(document.getElementById('instslot'));
+  var sk=document.getElementById('skip');
+  if(sk) sk.onclick=function(){ lsSet('installSkip',true); if(location.hash&&location.hash!=='#/'&&location.hash.indexOf('#/install')!==0){ route(); } else if(location.hash.indexOf('#/install')===0){ location.hash='#/'; } else route(); };
+}
+function hasNotes(){ try{ for(var i=0;i<localStorage.length;i++){ var k=localStorage.key(i); if(k&&(k.indexOf(LS+'j.')===0||k.indexOf(LS+'talk.')===0)){ var v=localStorage.getItem(k); if(v&&v!=='""') return true; } } }catch(e){} return false; }
+function backupDue(){ if(!hasNotes()) return false; var lb=lsGet('lastBackup',''); if(!lb) return true; return (Date.now()-new Date(lb).getTime())>30*864e5; }
+function backupName(){ var d=new Date(), z=function(n){return (n<10?'0':'')+n;}; return 'study-better-backup-'+d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate())+'.json'; }
+function buildBackup(){ var data={}; for(var i=0;i<localStorage.length;i++){ var k=localStorage.key(i); if(k&&k.indexOf(LS)===0&&k!==LS+'lastBackup') data[k]=localStorage.getItem(k); } return JSON.stringify({app:'study-better',version:1,exported:new Date().toISOString(),data:data},null,1); }
+function markBackedUp(){ lsSet('lastBackup',new Date().toISOString()); if((location.hash||'').indexOf('#/settings')===0) viewSettings(); }
+function downloadBackup(json,name){ var blob=new Blob([json],{type:'application/json'}); var url=URL.createObjectURL(blob); var a=document.createElement('a'); a.href=url; a.download=name; document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); },1000); markBackedUp(); }
+function saveBackup(){
+  var json=buildBackup(), name=backupName(), file=null;
+  try{ file=new File([json],name,{type:'application/json'}); }catch(e){}
+  if(file&&navigator.canShare&&navigator.canShare({files:[file]})){
+    navigator.share({files:[file],title:'Study Better backup'}).then(markBackedUp).catch(function(err){ if(!err||err.name!=='AbortError') downloadBackup(json,name); });
+  } else downloadBackup(json,name);
+}
+function restoreBackup(file){
+  var r=new FileReader();
+  r.onload=function(){
+    var o=null; try{ o=JSON.parse(r.result); }catch(e){}
+    var ok=o&&o.app==='study-better'&&o.data&&typeof o.data==='object'&&!Array.isArray(o.data)&&Object.keys(o.data).every(function(k){ return k.indexOf(LS)===0&&typeof o.data[k]==='string'; });
+    if(!ok){ alert('That file isn\u2019t a backup from Study Better.'); return; }
+    if(!confirm('This will replace the notes on this device with the ones in the backup. Continue?')) return;
+    try{ Object.keys(o.data).forEach(function(k){ localStorage.setItem(k,o.data[k]); }); }catch(e){ alert('Couldn\u2019t restore. Your device may be out of storage space.'); return; }
+    location.reload();
+  };
+  r.readAsText(file);
+}
+function lastBackupText(){ var lb=lsGet('lastBackup',''); return lb? new Date(lb).toLocaleDateString(undefined,{month:'long',day:'numeric',year:'numeric'}) : 'never'; }
+
 function route(){
   var h=location.hash||'#/', m;
+  if(h.indexOf('#/install')===0) return viewInstall(false);
+  if(!isInstalled() && !lsGet('installSkip',false)) return viewInstall(true);
   if(m=h.match(/^#\/w\/(\d+)\/d\/(\d+)/)) return viewDay(+m[1],+m[2],false);
   if(m=h.match(/^#\/week(?:\/(\d+))?/)) { var w=m[1]?+m[1]:position().w; return viewWeek(w); }
   if(h.indexOf('#/questions')===0) return viewQuestions();
@@ -311,6 +392,8 @@ function route(){
   return viewToday();
 }
 applyTheme();
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('./sw.js').catch(function(){}); }
+if(isInstalled()&&navigator.storage&&navigator.storage.persist){ navigator.storage.persist().catch(function(){}); }
 window.addEventListener('hashchange',route);
 route();
 })();
