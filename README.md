@@ -8,6 +8,7 @@ A year of daily study. One hard question a week, seven days to work it out, abou
 - `weeks/` has all the content, one JSON file per group of weeks. This is where you edit lessons.
 - `site.template.html` is the site code without the content.
 - `build.py` puts the two together into `index.html`.
+- `apple-touch-icon.png` is the book icon for phone home screens. Keep it next to `index.html`.
 
 ## Editing content
 
