@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Question of the Week</title>
+<style>
+:root{
+  --bg:#FAFAF7; --ink:#22262A; --muted:#6B7078; --line:#DCDCD5; --soft:#EFEFE9;
+  --accent:#2F5D50; --accent-ink:#FFFFFF; --warn:#8A5A1B;
+  --serif:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sans:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15191C; --ink:#E8E6E0; --muted:#9AA0A8; --line:#2E343A; --soft:#1E2428;
+    --accent:#8CC9B2; --accent-ink:#0F1A16; --warn:#D9A65A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15191C; --ink:#E8E6E0; --muted:#9AA0A8; --line:#2E343A; --soft:#1E2428;
+  --accent:#8CC9B2; --accent-ink:#0F1A16; --warn:#D9A65A;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+*,*::before,*::after{box-sizing:inherit;}
+html,body{margin:0;background:var(--bg);color:var(--ink);}
+body{font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px 80px;}
+
+/* top nav */
+.nav{display:flex;gap:18px;align-items:baseline;padding:18px 0 14px;border-bottom:1px solid var(--line);margin-bottom:28px;flex-wrap:wrap;}
+.nav .brand{font-family:var(--serif);font-size:20px;font-weight:600;margin-right:auto;color:var(--ink);}
+.nav a{color:var(--muted);font-size:14px;font-weight:500;}
+.nav a.on{color:var(--ink);border-bottom:2px solid var(--accent);padding-bottom:2px;}
+
+/* type */
+.kicker{font-size:14px;color:var(--muted);margin:0 0 10px;}
+.kicker a{color:var(--muted);}
+h1.q{font-family:var(--serif);font-weight:700;font-size:clamp(30px,6.4vw,42px);line-height:1.12;letter-spacing:-0.01em;margin:0 0 14px;}
+h2.dq{font-family:var(--serif);font-style:normal;font-weight:600;font-size:clamp(22px,4.6vw,27px);line-height:1.25;margin:34px 0 12px;color:var(--ink);}
+.prose{font-family:var(--serif);font-size:18px;line-height:1.6;}
+.prose p{margin:0 0 1em;}
+.prose em{font-style:italic;}
+h3.sec{font-size:13px;font-weight:600;color:var(--muted);margin:30px 0 10px;letter-spacing:.01em;}
+.weekintro{font-family:var(--serif);font-size:19px;line-height:1.5;color:var(--ink);margin:0 0 6px;}
+
+/* read list */
+.read{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);}
+.read li{padding:12px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.45;}
+.read li .ref{font-weight:500;}
+.read li .note{color:var(--muted);display:block;font-size:14px;margin-top:2px;}
+.read li.talk .ref{font-family:var(--serif);font-size:18px;}
+.read li.jrnl{background:var(--soft);padding:12px 14px;border-radius:4px;border-bottom:0;margin:6px 0;}
+.read li.jrnl .who{font-size:13px;color:var(--muted);margin-bottom:6px;}
+.read li.jrnl .entry{font-family:var(--serif);font-size:17px;white-space:pre-wrap;}
+.read li.jrnl .miss{color:var(--muted);font-size:15px;}
+.read li.jrnl .miss a{font-weight:500;}
+.takeaway{font-family:var(--serif);font-size:18px;line-height:1.5;border-left:3px solid var(--accent);padding:2px 0 2px 16px;margin:8px 0 0;}
+.takeaway p{margin:0 0 .8em;} .takeaway p:last-child{margin:0;}
+
+/* journal */
+.jprompt{font-family:var(--serif);font-size:19px;line-height:1.5;margin:0 0 12px;}
+textarea{width:100%;min-height:150px;font-family:var(--serif);font-size:18px;line-height:1.5;padding:12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);resize:vertical;}
+textarea:focus{border-color:var(--accent);}
+.row{display:flex;gap:12px;align-items:center;margin-top:10px;flex-wrap:wrap;}
+.btn{background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:4px;font-weight:600;font-size:15px;}
+.btn.quiet{background:var(--soft);color:var(--ink);}
+.status{font-size:14px;color:var(--muted);}
+.pager{display:flex;justify-content:space-between;margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:15px;gap:12px;}
+
+/* week + list */
+.days{list-style:none;padding:0;margin:0;border-top:1px solid var(--line);}
+.days li{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line);}
+.days .n{color:var(--muted);font-size:14px;}
+.days .t{font-family:var(--serif);font-size:18px;}
+.days .done{font-size:12px;color:var(--accent);font-weight:600;}
+.days .today{font-size:12px;color:var(--muted);}
+.qlist{list-style:none;padding:0;margin:0;border-top:1px solid var(--line);}
+.qlist li{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:baseline;}
+.qlist .n{color:var(--muted);font-size:14px;}
+.qlist a{font-family:var(--serif);font-size:18px;color:var(--ink);line-height:1.3;}
+.qlist .meta{display:block;font-size:13px;color:var(--muted);margin-top:3px;font-family:var(--sans);}
+.qlist li.cur a{color:var(--accent);}
+.tag{display:inline-block;font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:0 6px;margin-left:8px;vertical-align:2px;font-family:var(--sans);}
+.prog{font-size:14px;color:var(--muted);margin:6px 0 22px;}
+
+/* settings + forms */
+label.f{display:block;font-size:14px;font-weight:500;margin:18px 0 6px;}
+input[type=text],input[type=date],select{font:inherit;padding:9px 10px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:100%;max-width:340px;}
+.help{font-size:14px;color:var(--muted);margin:6px 0 0;line-height:1.45;}
+.notice{background:var(--soft);padding:14px 16px;border-radius:4px;font-size:15px;line-height:1.5;margin:0 0 24px;}
+.notice.warn{border-left:3px solid var(--warn);}
+.people{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
+.people button{border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:14px;}
+.people button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);}
+.jentry{padding:14px 0;border-bottom:1px solid var(--line);}
+.jentry .h{font-size:14px;color:var(--muted);margin-bottom:4px;} .jentry .h a{color:var(--muted);font-weight:500;}
+.jentry .p{font-family:var(--serif);font-size:16px;color:var(--muted);margin-bottom:6px;}
+.jentry .e{font-family:var(--serif);font-size:18px;white-space:pre-wrap;}
+.arc{list-style:none;padding:0;margin:14px 0 0;counter-reset:d;}
+.arc li{font-family:var(--serif);font-size:17px;padding:5px 0 5px 34px;position:relative;}
+.arc li::before{counter-increment:d;content:counter(d);position:absolute;left:0;color:var(--muted);font-family:var(--sans);font-size:13px;top:9px;}
+.small{font-size:14px;color:var(--muted);}
+@media (prefers-reduced-motion: no-preference){ .fade{animation:fade .25s ease-out;} @keyframes fade{from{opacity:0}to{opacity:1}} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav" id="nav"></nav>
+  <main id="app"></main>
+</div>
+<script type="application/json" id="data">/*DATA*/</script>
+<script>
+(function(){
+'use strict';
+var WEEKS = JSON.parse(document.getElementById('data').textContent);
+var ARC = ["What does it actually say?","What did it mean to the people who first heard it?","What does the Restoration add?","What are prophets saying about it right now?","What's the hard part?","What would it look like to live this?","What do I believe now?"];
+var DEFAULT_START = '2027-01-01';
+var LS = 'tq.';
+function lsGet(k,d){ try{ var v=localStorage.getItem(LS+k); return v===null?d:JSON.parse(v);}catch(e){return d;} }
+function lsSet(k,v){ try{ localStorage.setItem(LS+k,JSON.stringify(v)); return true;}catch(e){ return false;} }
+
+/* people + journal */
+function people(){ return lsGet('people',[]); }
+function me(){ var m=lsGet('me',''); var p=people(); if(!m&&p.length) m=p[0]; return m; }
+function jkey(w,d){ return 'j.'+me()+'.'+w+'.'+d; }
+function getEntry(w,d){ return me()? (lsGet(jkey(w,d),'')||'') : ''; }
+function setEntry(w,d,t){ return lsSet(jkey(w,d),t); }
+function talkKey(w){ return 'talk.'+me()+'.'+w; }
+
+/* dates */
+function startDate(){ return lsGet('start',DEFAULT_START); }
+function parseDate(s){ var p=s.split('-'); return new Date(+p[0],+p[1]-1,+p[2]); }
+function today(){ var n=new Date(); return new Date(n.getFullYear(),n.getMonth(),n.getDate()); }
+function position(){
+  var diff=Math.floor((today()-parseDate(startDate()))/86400000);
+  if(diff<0) return {before:true, daysUntil:-diff, w:1, d:1};
+  if(diff>=364) return {after:true, w:52, d:7};
+  return {w:Math.floor(diff/7)+1, d:(diff%7)+1};
+}
+function fmtDate(dt){ return dt.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'}); }
+function dateOf(w,d){ var s=parseDate(startDate()); return new Date(s.getFullYear(),s.getMonth(),s.getDate()+(w-1)*7+(d-1)); }
+
+/* text */
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function md(s){ return esc(s).replace(/\*([^*\n]+)\*/g,'<em>$1</em>'); }
+function paras(s){ return s.split(/\n\n+/).map(function(p){return '<p>'+md(p)+'</p>';}).join(''); }
+function searchUrl(q){ return 'https://www.churchofjesuschrist.org/search?lang=eng&query='+encodeURIComponent(q); }
+function week(n){ return WEEKS[n-1]; }
+function tagLabel(t){ return t==='L1'?'Preach My Gospel lesson 1':t==='L2'?'Preach My Gospel lesson 2':t==='L3'?'Preach My Gospel lesson 3':''; }
+function done(w,d){ return getEntry(w,d).trim().length>0; }
+function weekDone(w){ var c=0; for(var i=1;i<=7;i++) if(done(w,i)) c++; return c; }
+function totalDone(){ var c=0; for(var w=1;w<=52;w++) c+=weekDone(w); return c; }
+
+/* render read items */
+function isLinkable(ref){ return !/^(your |every |three of|one book|one d&c|a second|that one|the person)/i.test(ref); }
+function readItem(r, w, d){
+  if(typeof r==='string'){
+    var m=r.match(/^([^(]+?)(\s*\((.*)\))?$/);
+    var ref=m?m[1].trim():r, note=m&&m[3]?m[3]:'';
+    var inner = isLinkable(ref) ? '<a class="ref" href="'+searchUrl(ref)+'" target="_blank" rel="noopener">'+esc(ref)+'</a>' : '<span class="ref">'+esc(ref)+'</span>';
+    return '<li>'+inner+(note?'<span class="note">'+md(note)+'</span>':'')+'</li>';
+  }
+  if(r.journal){
+    var jw=r.journal[0], jd=r.journal[1], e=getEntry(jw,jd), src=week(jw).days[jd-1];
+    var who='Your Week '+jw+', Day '+jd+' entry';
+    if(e.trim()) return '<li class="jrnl"><div class="who">'+who+'</div><div class="entry">'+esc(e)+'</div></li>';
+    return '<li class="jrnl"><div class="who">'+who+'</div><div class="miss">You skipped that one. The prompt was: <em>'+md(src.journal)+'</em> <a href="#/w/'+jw+'/d/'+jd+'">Go answer it</a></div></li>';
+  }
+  if(r.talk){
+    var url=r.url||searchUrl('"'+r.talk+'" '+r.speaker);
+    var meta=esc(r.speaker)+', '+esc(r.date)+' general conference';
+    return '<li class="talk"><a class="ref" href="'+url+'" target="_blank" rel="noopener">'+esc(r.talk)+'</a><span class="note">'+meta+(r.section?'. '+md(r.section):'')+(r.note?' '+md(r.note):'')+'</span></li>';
+  }
+  return '';
+}
+
+/* views */
+var app=document.getElementById('app'), navEl=document.getElementById('nav');
+function nav(cur){
+  var items=[['#/','Today'],['#/week','This week'],['#/questions','All 52'],['#/journal','Journal'],['#/settings','Settings']];
+  navEl.innerHTML='<a class="brand" href="#/">Question of the Week</a>'+items.map(function(i){return '<a href="'+i[0]+'"'+(cur===i[1]?' class="on"':'')+'>'+i[1]+'</a>';}).join('');
+}
+function setView(html,title){ app.innerHTML='<div class="fade">'+html+'</div>'; document.title=(title?title+' · ':'')+'Question of the Week'; window.scrollTo(0,0); }
+
+function firstRun(){
+  return '<h1 class="q">A year of one question a week.</h1>'+
+  '<div class="prose"><p>Ten minutes a day. One hard question every week. Seven days to work it out: what the scripture says, what it meant, what the Restoration adds, what prophets are saying now, the hard part, how to live it, and what you believe.</p><p>Your journal stays on this device. Nobody else can see it, including the person who built this.</p></div>'+
+  '<label class="f" for="nm">Your name</label><input type="text" id="nm" placeholder="First name" autocomplete="off">'+
+  '<div class="row"><button class="btn" id="go">Start</button></div>';
+}
+
+function viewToday(){
+  nav('Today');
+  if(!me()){ setView(firstRun(),'Welcome'); document.getElementById('go').onclick=function(){ var n=document.getElementById('nm').value.trim(); if(!n) return; var p=people(); if(p.indexOf(n)<0) p.push(n); lsSet('people',p); lsSet('me',n); route(); }; return; }
+  var pos=position();
+  if(pos.before){
+    var s=parseDate(startDate());
+    setView('<p class="kicker">Hi '+esc(me())+'</p><h1 class="q">The program starts '+fmtDate(s)+'.</h1><div class="prose"><p>That\u2019s '+pos.daysUntil+' day'+(pos.daysUntil===1?'':'s')+' from now. You can read ahead from the <a href="#/questions">list of all 52 questions</a>, or change the start date in <a href="#/settings">Settings</a> if you\u2019re testing.</p></div>'+arcHtml(),'Not started');
+    return;
+  }
+  viewDay(pos.w,pos.d,true);
+}
+function arcHtml(){ return '<h3 class="sec">Every week follows the same seven days</h3><ol class="arc">'+ARC.map(function(a){return '<li>'+esc(a)+'</li>';}).join('')+'</ol>'; }
+
+function viewDay(w,d,isToday){
+  var W=week(w), D=W.days[d-1]; if(!W||!D){ location.hash='#/'; return; }
+  if(!isToday) nav('');
+  var pos=position(), reallyToday=!pos.before&&!pos.after&&pos.w===w&&pos.d===d;
+  var h='';
+  h+='<p class="kicker">'+(reallyToday?'Today, ':'')+fmtDate(dateOf(w,d))+' &nbsp;·&nbsp; <a href="#/week/'+w+'">Week '+w+'</a>, Day '+d+' of 7'+(W.tag?'<span class="tag">'+tagLabel(W.tag)+'</span>':'')+'</p>';
+  h+='<h1 class="q">'+md(W.question)+'</h1>';
+  if(d===1) h+='<div class="weekintro">'+paras(W.intro)+'</div>';
+  if(W.placeholder){
+    var t=lsGet(talkKey(w),'');
+    h+='<div class="notice warn"><strong>'+esc(W.placeholder)+'.</strong> This week you pick the talk. '+(t?'You picked: <em>'+esc(t)+'</em>.':'Write the speaker and title here so it shows up all week.')+'<label class="f" for="tk">My talk</label><input type="text" id="tk" value="'+esc(t)+'" placeholder="Speaker, title"><div class="row"><button class="btn quiet" id="tksave">Save talk</button></div></div>';
+  }
+  h+='<h2 class="dq">Day '+d+': '+md(D.q)+'</h2>';
+  h+='<div class="prose">'+paras(D.intro)+'</div>';
+  h+='<h3 class="sec">Read</h3><ul class="read">'+D.read.map(function(r){return readItem(r,w,d);}).join('')+'</ul>';
+  if(D.takeaway) h+='<h3 class="sec">Key takeaway</h3><div class="takeaway">'+paras(D.takeaway)+'</div>';
+  h+='<h3 class="sec">Journal</h3><p class="jprompt">'+md(D.journal)+'</p>';
+  h+='<textarea id="jt" placeholder="Write it here. Only you can see this.">'+esc(getEntry(w,d))+'</textarea>';
+  h+='<div class="row"><button class="btn" id="jsave">Save entry</button><span class="status" id="jstat">'+(done(w,d)?'Saved':'')+'</span></div>';
+  var prev=d>1?'#/w/'+w+'/d/'+(d-1):(w>1?'#/w/'+(w-1)+'/d/7':''), next=d<7?'#/w/'+w+'/d/'+(d+1):(w<52?'#/w/'+(w+1)+'/d/1':'');
+  h+='<div class="pager"><span>'+(prev?'<a href="'+prev+'">Previous day</a>':'')+'</span><span>'+(next?'<a href="'+next+'">Next day</a>':'')+'</span></div>';
+  setView(h,'Week '+w+' Day '+d);
+  var ta=document.getElementById('jt'), st=document.getElementById('jstat');
+  document.getElementById('jsave').onclick=function(){ var ok=setEntry(w,d,ta.value); st.textContent=ok?'Saved '+new Date().toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'}):'Could not save. Your browser is blocking storage.'; };
+  ta.addEventListener('input',function(){ st.textContent='Unsaved changes'; });
+  var tks=document.getElementById('tksave'); if(tks) tks.onclick=function(){ lsSet(talkKey(w),document.getElementById('tk').value.trim()); viewDay(w,d,isToday); };
+}
+
+function viewWeek(w){
+  nav('This week');
+  var W=week(w); if(!W){ location.hash='#/'; return; }
+  var pos=position();
+  var h='<p class="kicker">Week '+w+' of 52 &nbsp;·&nbsp; '+fmtDate(dateOf(w,1))+(W.tag?'<span class="tag">'+tagLabel(W.tag)+'</span>':'')+'</p>';
+  h+='<h1 class="q">'+md(W.question)+'</h1><div class="weekintro">'+paras(W.intro)+'</div>';
+  h+='<h3 class="sec">Seven days</h3><ul class="days">'+W.days.map(function(D,i){ var d=i+1, cur=!pos.before&&!pos.after&&pos.w===w&&pos.d===d;
+    return '<li><span class="n">'+d+'</span><a class="t" href="#/w/'+w+'/d/'+d+'">'+md(D.q)+'</a><span>'+(done(w,d)?'<span class="done">Done</span>':(cur?'<span class="today">Today</span>':''))+'</span></li>'; }).join('')+'</ul>';
+  h+='<div class="pager"><span>'+(w>1?'<a href="#/week/'+(w-1)+'">Week '+(w-1)+'</a>':'')+'</span><span>'+(w<52?'<a href="#/week/'+(w+1)+'">Week '+(w+1)+'</a>':'')+'</span></div>';
+  setView(h,'Week '+w);
+}
+
+function viewQuestions(){
+  nav('All 52');
+  var pos=position(), t=totalDone();
+  var h='<h1 class="q">All 52 questions.</h1><p class="prog">'+t+' of 364 sessions done. Jump anywhere; the program doesn\u2019t care what day it is.</p>';
+  h+='<ul class="qlist">'+WEEKS.map(function(W){ var cur=!pos.before&&!pos.after&&pos.w===W.n; var c=weekDone(W.n);
+    return '<li'+(cur?' class="cur"':'')+'><span class="n">'+W.n+'</span><span><a href="#/week/'+W.n+'">'+md(W.question)+'</a><span class="meta">'+fmtDate(dateOf(W.n,1)).replace(/^\w+, /,'')+(W.tag?' · '+tagLabel(W.tag):'')+(c?' · '+c+'/7 done':'')+'</span></span></li>'; }).join('')+'</ul>';
+  setView(h,'All 52');
+}
+
+function viewJournal(){
+  nav('Journal');
+  var h='<h1 class="q">'+(me()?esc(me())+'\u2019s journal.':'Journal.')+'</h1>';
+  h+='<p class="help">Everything you\u2019ve written, newest first. It lives in this browser on this device only. Clearing your browser data erases it, so copy it out now and then.</p>';
+  var entries=[];
+  for(var w=52;w>=1;w--) for(var d=7;d>=1;d--) if(done(w,d)) entries.push([w,d]);
+  if(!entries.length) h+='<div class="notice">Nothing yet. Your first entry is waiting on <a href="#/">today\u2019s page</a>.</div>';
+  else{
+    h+='<div class="row"><button class="btn quiet" id="exp">Show as plain text to copy</button></div><div id="expbox"></div>';
+    h+=entries.map(function(e){ var W=week(e[0]),D=W.days[e[1]-1];
+      return '<div class="jentry"><div class="h"><a href="#/w/'+e[0]+'/d/'+e[1]+'">Week '+e[0]+', Day '+e[1]+'</a> · '+fmtDate(dateOf(e[0],e[1])).replace(/^\w+, /,'')+'</div><div class="p">'+md(D.journal)+'</div><div class="e">'+esc(getEntry(e[0],e[1]))+'</div></div>'; }).join('');
+  }
+  setView(h,'Journal');
+  var b=document.getElementById('exp'); if(b) b.onclick=function(){
+    var txt=entries.slice().reverse().map(function(e){ var W=week(e[0]),D=W.days[e[1]-1]; return 'WEEK '+e[0]+', DAY '+e[1]+' ('+fmtDate(dateOf(e[0],e[1]))+')\n'+W.question+'\nPrompt: '+D.journal+'\n\n'+getEntry(e[0],e[1])+'\n\n'; }).join('----\n\n');
+    document.getElementById('expbox').innerHTML='<textarea style="min-height:260px" readonly>'+esc(txt)+'</textarea><p class="help">Select all, copy, and paste it somewhere safe.</p>';
+  };
+}
+
+function viewSettings(){
+  nav('Settings');
+  var p=people(), m=me();
+  var h='<h1 class="q">Settings.</h1>';
+  h+='<label class="f">Who\u2019s reading</label><div class="people" id="ppl">'+p.map(function(n){return '<button data-n="'+esc(n)+'"'+(n===m?' class="on"':'')+'>'+esc(n)+'</button>';}).join('')+'</div>';
+  h+='<p class="help">Each person gets their own journal. Switching names switches journals. Nobody can read anyone else\u2019s entries, but anyone using this device can pick any name, so this is privacy by trust, not by lock.</p>';
+  h+='<label class="f" for="newp">Add a person</label><input type="text" id="newp" placeholder="First name"><div class="row"><button class="btn quiet" id="addp">Add</button></div>';
+  h+='<label class="f" for="sd">Program start date</label><input type="date" id="sd" value="'+esc(startDate())+'"><div class="row"><button class="btn quiet" id="sdsave">Save date</button><button class="btn quiet" id="sdreset">Reset to Jan 1, 2027</button></div>';
+  h+='<p class="help">Today\u2019s page is figured from this date. Set it to today if you want to test from Week 1 right now. Day 1 of each week lands on the weekday you pick here.</p>';
+  h+='<label class="f" for="th">Theme</label><select id="th"><option value="">Match my device</option><option value="light">Light</option><option value="dark">Dark</option></select>';
+  h+='<h3 class="sec">About</h3><p class="small">Fifty-two questions, seven days each, ten minutes a day. Sources: the New Testament, the Book of Mormon, the Doctrine and Covenants, the Old Testament and Pearl of Great Price, Preach My Gospel, and general conference. Scripture and talk links open a search on churchofjesuschrist.org.</p>'+arcHtml();
+  setView(h,'Settings');
+  var th=document.getElementById('th'); th.value=lsGet('theme',''); th.onchange=function(){ lsSet('theme',th.value); applyTheme(); };
+  document.getElementById('ppl').onclick=function(e){ var b=e.target.closest('button'); if(!b) return; lsSet('me',b.getAttribute('data-n')); viewSettings(); };
+  document.getElementById('addp').onclick=function(){ var n=document.getElementById('newp').value.trim(); if(!n) return; var pp=people(); if(pp.indexOf(n)<0) pp.push(n); lsSet('people',pp); lsSet('me',n); viewSettings(); };
+  document.getElementById('sdsave').onclick=function(){ var v=document.getElementById('sd').value; if(/^\d{4}-\d{2}-\d{2}$/.test(v)){ lsSet('start',v); viewSettings(); } };
+  document.getElementById('sdreset').onclick=function(){ lsSet('start',DEFAULT_START); viewSettings(); };
+}
+function applyTheme(){ var t=lsGet('theme',''); if(t) document.documentElement.setAttribute('data-theme',t); else document.documentElement.removeAttribute('data-theme'); }
+
+function route(){
+  var h=location.hash||'#/', m;
+  if(m=h.match(/^#\/w\/(\d+)\/d\/(\d+)/)) return viewDay(+m[1],+m[2],false);
+  if(m=h.match(/^#\/week(?:\/(\d+))?/)) { var w=m[1]?+m[1]:position().w; return viewWeek(w); }
+  if(h.indexOf('#/questions')===0) return viewQuestions();
+  if(h.indexOf('#/journal')===0) return viewJournal();
+  if(h.indexOf('#/settings')===0) return viewSettings();
+  return viewToday();
+}
+applyTheme();
+window.addEventListener('hashchange',route);
+route();
+})();
+</script>
+</body>
+</html>

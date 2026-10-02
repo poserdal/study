@@ -1,0 +1,630 @@
+[
+{
+"n": 29,
+"tag": "",
+"placeholder": "April 2027 General Conference",
+"question": "Conference week. Which talk from April got under your skin?",
+"intro": "This week is different. No topic picked ahead of time. Instead you pick one talk from April 2027 general conference, the one that either hit you hardest or bugged you the most (both count), and we spend the week taking it apart. The prophets just spoke. You're going to actually do something with it. Before Day 1, pick your talk. Write the speaker and title in your Day 1 journal.",
+"days": [
+{
+"q": "What did the speaker actually say?",
+"intro": "Read the whole talk, start to finish, no skipping. Not the summary. Not the highlights video. The talk. When you read, mark the one sentence that stopped you, and the one sentence you disagreed with or didn't understand. There's always one of each.",
+"read": [
+"Your talk, the whole thing"
+],
+"journal": "Write the speaker and title. Then write the sentence that stopped you and the sentence you pushed back on."
+},
+{
+"q": "What scriptures did they build it on?",
+"intro": "Conference talks are scripture stacked on scripture. Go back through your talk and list every scripture the speaker cited. Then read at least three of them in context, meaning the verses around them, not just the one line. When you read, figure out why the speaker picked *that* verse and not a different one.",
+"read": [
+"Every scripture cited in your talk (list them)",
+"Three of them, read in context"
+],
+"journal": "Which scripture was doing the most work in the talk? Did reading it in context change what you thought the speaker meant?"
+},
+{
+"q": "What does the rest of scripture say about it?",
+"intro": "Now find your own. Take the talk's main point and find two scriptures the speaker *didn't* use, one from the Book of Mormon and one from the Doctrine and Covenants, that teach the same thing. Use the Topical Guide or the search bar. This is the part where you stop being an audience and start being a student.",
+"read": [
+"One Book of Mormon passage on the talk's main point (you find it)",
+"One D&C passage on the same point (you find it)"
+],
+"journal": "Write the two references you found. Did either one say it better than the talk?"
+},
+{
+"q": "Who else talked about it?",
+"intro": "Nobody at conference speaks alone. There's almost always another talk in the same conference on a related topic, sometimes deliberately. Find one. Read it. Then compare. When you read, look for where the two speakers agree and where they come at it from different angles.",
+"read": [
+"A second talk from April 2027 on a related topic"
+],
+"takeaway": "Write your own. Two or three sentences on what the second speaker added that the first didn't.",
+"journal": "Two apostles, same topic. What did the second one see that the first one didn't say?"
+},
+{
+"q": "What did they ask you to do that you don't want to?",
+"intro": "Here's the hard part. Every conference talk has an ask in it. Usually it's clear. Sometimes it's between the lines. Find the ask in your talk and then be honest about whether you want to do it. If you do, it's probably not the real ask. Look harder.",
+"read": [
+"Your talk again, just the last third",
+"D&C 1:37-38"
+],
+"journal": "What did the speaker ask you to do? Write the actual ask. Then write why you haven't done it yet."
+},
+{
+"q": "Do it.",
+"intro": "No reading today. Or almost none. Take the ask from Day 5 and do the first step of it. Today. Then come back and write what happened. If the ask is too big for one day, do the part that fits in one day. If you can't figure out what the first step is, that's the journal entry.",
+"read": [
+"Your Day 5 journal entry",
+{
+"journal": [
+29,
+5
+]
+}
+],
+"journal": "What did you do? What happened? What's the next step?"
+},
+{
+"q": "What do I believe now?",
+"intro": "Read your Day 1 entry, both sentences. Then reread the paragraph of the talk that had the sentence that stopped you.",
+"read": [
+{
+"journal": [
+29,
+1
+]
+},
+"That one paragraph of your talk"
+],
+"journal": "Rewrite the talk's main point in your own words, in two sentences, the way you'd say it to a friend who didn't watch conference."
+}
+]
+},
+{
+"n": 30,
+"tag": "L3",
+"question": "\"Saved by grace.\" Why do we get weird about that word?",
+"intro": "Ask a Latter-day Saint about grace and you'll often get a nervous pivot to works. \"Well, it's after all we can do.\" We've been so worried about sounding like we get a free pass that we've made grace sound like a bonus for people who earned it. Paul would have a problem with that. So would Nephi, actually. This week is about what grace really is, and why it should make you relax, not squirm.",
+"days": [
+{
+"q": "What did Paul actually say?",
+"intro": "Read Romans 3 and Ephesians 2. Paul is blunt: nobody earns it. Not you, not the most obedient person you know. When you read, count how many times he says \"not of works.\" Then notice what Ephesians 2:10 says right after, because people stop at verse 9.",
+"read": [
+"Romans 3:20-28",
+"Ephesians 2:4-10"
+],
+"journal": "What's your gut reaction when someone says \"saved by grace alone\"? Write it. That reaction is what we're studying this week."
+},
+{
+"q": "What did \"grace\" mean to them?",
+"intro": "The Greek is *charis*. It means a gift, a favor, kindness you didn't earn and can't pay back. In Paul's world it was the word for what a patron gave a client. The client couldn't repay it. He could only be grateful and loyal. That's the relationship Paul is describing. Read him explaining what grace did while we were still enemies. Then read the parable Jesus told about it.",
+"read": [
+"Romans 5:1-8",
+"Matthew 18:23-27"
+],
+"journal": "Romans 5:8 says Christ died for us while we were still sinners. Not after we got our act together. What does that do to the idea of earning it?"
+},
+{
+"q": "What does \"after all we can do\" actually mean?",
+"intro": "Here's the verse everybody quotes wrong. Nephi says we're saved by grace \"after all we can do.\" People read that as \"you do your part, then grace covers the gap.\" But read the rest of the Book of Mormon. Anti-Nephi-Lehies said all they could do was repent. Moroni says grace makes you perfect, not you plus grace. Read these and decide what \"all we can do\" actually is.",
+"read": [
+"2 Nephi 25:23",
+"Alma 24:10-11",
+"2 Nephi 10:24",
+"Moroni 10:32-33"
+],
+"journal": "If \"all we can do\" is repent and come unto Christ, does that change how you read 2 Nephi 25:23? What did you used to think it meant?"
+},
+{
+"q": "What does an apostle say about grace?",
+"intro": "President Dieter F. Uchtdorf, April 2015. He gave a whole talk on grace and it fixed a lot of people's theology.",
+"read": [
+{
+"talk": "The Gift of Grace",
+"speaker": "Dieter F. Uchtdorf",
+"date": "April 2015",
+"section": "Read the whole thing."
+}
+],
+"takeaway": "His point is that grace isn't the gap-filler after you've done your best. It's the whole thing. He says you can't earn heaven any more than you can earn your own birth. But then he says the part that matters: grace changes what you *want*. Once you get it, you obey out of love, not to pay a bill. Obedience is the result of grace, not the price of it.",
+"journal": "Uchtdorf says obedience is what grace produces, not what buys it. Which direction have you been running it?"
+},
+{
+"q": "If grace is free, why bother with commandments?",
+"intro": "Here's the hard part, and it's the objection that makes us nervous. If grace covers everything, why not just sin? Paul heard that exact question and answered it. Read Romans 6. Then read James, who seems to disagree with Paul and doesn't. Then read the Lord's own explanation of how grace grows. Figure out why grace and commandments aren't opposites.",
+"read": [
+"Romans 6:1-4, 14-18",
+"James 2:17-24",
+"D&C 93:12-13"
+],
+"journal": "Paul says \"shall we sin that grace may abound? God forbid.\" Why not? Answer it in your own words, not his."
+},
+{
+"q": "How do you actually live in grace?",
+"intro": "Grace isn't a doctrine you agree with. It's a way of standing. King Benjamin says even if you served God with your whole soul you'd still be in debt, and that's supposed to be freeing, not crushing. Read him. Then read Ether 12:27, where weakness is the entry point, not the disqualifier. When you read, look for the posture. What does a person who lives in grace act like?",
+"read": [
+"Mosiah 2:20-25",
+"Ether 12:27",
+"Philippians 2:12-13",
+"Preach My Gospel, lesson 3, \"Faith in Jesus Christ\""
+],
+"journal": "Pick one thing you've been doing to earn God's approval. Do it this week for a different reason, because you love Him, and write down whether it felt different."
+},
+{
+"q": "What do I believe now?",
+"intro": "Back to Ephesians 2. Read all seven verses this time, including verse 10. Then read your Day 1 gut reaction.",
+"read": [
+"Ephesians 2:4-10",
+{
+"journal": [
+30,
+1
+]
+}
+],
+"journal": "Answer the week's question: What is grace? And why did you ever get weird about it?"
+}
+]
+},
+{
+"n": 31,
+"tag": "L2",
+"question": "Why did you come to earth? What is mortality actually for?",
+"intro": "You're here. You didn't ask to be, at least not that you remember. And most days you're too busy to ask why. Preach My Gospel calls it the plan of salvation and lays out the whole thing in a few pages: where you came from, why you're here, where you're going. This week is the middle part. Why *here*, why a body, why suffering, why a test you didn't sign up for. Except you did.",
+"days": [
+{
+"q": "What did God say you're here for?",
+"intro": "Abraham saw it before it started. God showed him the spirits and said He'd make an earth and \"prove them.\" That's the plan in one verse. Then read Alma explaining what the proving is, and Paul on what it's supposed to produce. When you read, look for the purpose in each one. They're not identical.",
+"read": [
+"Abraham 3:22-26",
+"Alma 12:24",
+"Romans 8:16-18"
+],
+"journal": "Abraham 3:25 says the test is whether you'll do what God commands. Is that how you'd describe your life? What would you say it's a test of?"
+},
+{
+"q": "What did the ancients think life was for?",
+"intro": "Ecclesiastes is the most honest book in the Bible. The writer tried everything, money, pleasure, wisdom, work, and called it all vanity. Read him at his lowest and then at his conclusion. Then read Jesus defining eternal life in one sentence in John 17. When you read, notice that Jesus doesn't define it as a place.",
+"read": [
+"Ecclesiastes 1:2-9",
+"Ecclesiastes 12:13-14",
+"John 17:3"
+],
+"journal": "Ecclesiastes says everything's vanity without God. What are you chasing that would be vanity if this life were all there was?"
+},
+{
+"q": "What does the Restoration add?",
+"intro": "Three things nobody else teaches. Lehi says the Fall was on purpose so we could have joy. The Lord says spirit and body together is the point, not the problem. And Moses 1:39 says God's whole work is *us*. Read them and put them together. When you read, look for what mortality gives you that you couldn't get before it.",
+"read": [
+"2 Nephi 2:22-25",
+"D&C 93:33-34",
+"Moses 1:39"
+],
+"journal": "D&C 93:33-34 says you can't have a fulness of joy without a body. What's something joyful you can only do because you have one?"
+},
+{
+"q": "What does an apostle say about the plan?",
+"intro": "President Dieter F. Uchtdorf, October 2016. He lays out the plan of salvation and asks why it matters that you know it.",
+"read": [
+{
+"talk": "O How Great the Plan of Our God!",
+"speaker": "Dieter F. Uchtdorf",
+"date": "October 2016",
+"section": "Read the whole thing."
+}
+],
+"takeaway": "His point is that knowing the plan changes how you handle everything in it. If you know where you came from and where you're going, the middle makes sense even when it hurts. He says the plan isn't about getting through mortality, it's about becoming something in it. And he says God's not grading you on a curve against other people. He's working on *you*.",
+"journal": "Uchtdorf says knowing the plan changes how you handle the hard parts. What hard part would look different if you actually believed you chose to come here?"
+},
+{
+"q": "If it's a test, why so much pointless suffering?",
+"intro": "Here's the hard part. \"Life is a test\" sounds fine until a kid gets cancer. What's that testing? Not everything hard is a lesson. Some of it is just the world being broken. Read Alma 62, where the same war made some people humble and others hard. Read Hebrews on chastening. Read the Lord's words to Joseph in Liberty. Then decide whether \"test\" is the right word, or whether \"school\" or something else fits better.",
+"read": [
+"Alma 62:41",
+"Hebrews 12:5-11",
+"D&C 122:7",
+"Job 23:10"
+],
+"journal": "Alma 62:41 says the same affliction softened some and hardened others. What's the thing in your life that could go either way right now?"
+},
+{
+"q": "How do you live like you know why you're here?",
+"intro": "The Lord says don't wait to be commanded, use your agency to do good. King Benjamin describes what happy people who keep the commandments look like. And Lehi says the whole point is joy. Not later. Now. When you read, look for what living on purpose actually involves. It's simpler than a mission statement.",
+"read": [
+"D&C 58:26-28",
+"Mosiah 2:41",
+"2 Nephi 2:25",
+"Preach My Gospel, lesson 2, \"Our Life on Earth\""
+],
+"journal": "Moses 1:39 says God's work is your immortality and eternal life. Write one sentence: what's *your* work? Then write what you'll do about it this week."
+},
+{
+"q": "What do I believe now?",
+"intro": "Back to Abraham 3. Read it one more time. Then read your Day 1 answer.",
+"read": [
+"Abraham 3:24-26",
+{
+"journal": [
+31,
+1
+]
+}
+],
+"journal": "Answer the week's question: Why did you come to earth? Say it like you actually believe you chose it."
+}
+]
+},
+{
+"n": 32,
+"tag": "",
+"question": "Charity. Is it just being nice?",
+"intro": "Paul says without charity you're nothing. Not less. Nothing. Moroni says the same thing. So it matters what the word means. Most people hear \"charity\" and think of donations or being pleasant. Paul and Moroni meant something a lot harder and a lot more specific. This week is about what charity actually is and how you get it, since apparently you can't do without it.",
+"days": [
+{
+"q": "What did Paul say it is?",
+"intro": "Read 1 Corinthians 13 like you've never heard it at a wedding. Paul lists what charity is and isn't. When you read, turn each one into a question about yourself. \"Charity suffereth long.\" Do you? \"Is not easily provoked.\" Are you?",
+"read": [
+"1 Corinthians 13:1-13"
+],
+"journal": "Go through the list in verses 4 through 7. Write down the one you're worst at."
+},
+{
+"q": "What word was Paul using?",
+"intro": "Greek has several words for love. *Eros* is desire. *Philia* is friendship. Paul used *agape*, which is love that doesn't depend on the other person deserving it. It's the word John uses for God loving the world. And here's the best example: when the resurrected Jesus asks Peter \"lovest thou me\" three times, He uses agape twice and Peter answers with philia both times. Read it with that in mind.",
+"read": [
+"John 21:15-17",
+"John 3:16",
+"Luke 6:32-36"
+],
+"journal": "Peter couldn't say \"agape\" back to Jesus. He could only say \"I'm your friend.\" Is that where you are? Is that okay?"
+},
+{
+"q": "What does Moroni add?",
+"intro": "Moroni gives the definition Paul didn't: charity is the pure love of Christ. Not your love for Christ. *His* love, in you. And then he tells you how to get it, and it isn't by trying harder. Read him. Then read Nephi and Ether on what the Lord does with people who have it. When you read, look for the mechanism.",
+"read": [
+"Moroni 7:44-48",
+"2 Nephi 26:30",
+"Ether 12:33-34"
+],
+"journal": "Moroni says pray for it \"with all the energy of heart.\" Have you ever actually prayed for charity? Not for a person. For the thing itself."
+},
+{
+"q": "What does an apostle say about loving Him?",
+"intro": "Elder Jeffrey R. Holland, October 2012. He takes the John 21 conversation from Day 2 and builds a whole talk on what Jesus was really asking Peter.",
+"read": [
+{
+"talk": "The First Great Commandment",
+"speaker": "Jeffrey R. Holland",
+"date": "October 2012",
+"section": "Read the whole thing."
+}
+],
+"takeaway": "His point is that when Jesus asked Peter if he loved Him, the answer wasn't supposed to be words. It was \"feed my sheep.\" Love that doesn't do something isn't the kind He's talking about. Holland says Peter had gone back to fishing after the Resurrection, and Jesus had to come get him and say: not this, that. Go take care of people. That's how you love me.",
+"journal": "Holland says loving Christ means feeding His sheep. Who are the sheep you've been walking past on your way back to the boat?"
+},
+{
+"q": "Do you have to love people you don't like?",
+"intro": "Here's the hard part. Charity \"beareth all things.\" Does that mean you put up with anything? \"Thinketh no evil.\" Does that mean you ignore red flags? And can you actually love someone you can't stand? John says if you hate your brother you don't love God, period. Read these and figure out what charity requires with the person you like least.",
+"read": [
+"1 John 4:20-21",
+"Matthew 5:43-47",
+"1 Corinthians 13:7 again, with the footnotes",
+"D&C 121:41-43 (charity includes reproving)"
+],
+"journal": "Name the person you have the hardest time loving. What would charity toward them actually require? Not niceness. Charity."
+},
+{
+"q": "How do you get it?",
+"intro": "Moroni said pray. King Benjamin adds what to do while you're praying: teach your kids, help people, don't turn away the beggar. And the Lord says let your bowels be full of charity toward *everyone*. When you read, look for the connection between praying for it and doing it. They're not separate steps.",
+"read": [
+"Moroni 7:48 again",
+"Mosiah 4:14-16",
+"D&C 121:45",
+"Preach My Gospel, chapter 6, \"Charity and Love\""
+],
+"journal": "Pray for charity tonight, with all the energy of heart, and name the person from Day 5 in the prayer. Then do one charitable thing for them this week. Write what you did."
+},
+{
+"q": "What do I believe now?",
+"intro": "Back to 1 Corinthians 13. Read verses 4 through 7 one more time. Then read your Day 1 answer.",
+"read": [
+"1 Corinthians 13:4-8",
+{
+"journal": [
+32,
+1
+]
+}
+],
+"journal": "Answer the week's question: What is charity? And is it more than being nice?"
+}
+]
+},
+{
+"n": 33,
+"tag": "",
+"question": "\"Through a glass, darkly.\" How much are we supposed to know?",
+"intro": "Paul admits he sees dimly. He knows in part. That's Paul, who saw the resurrected Christ and got caught up to the third heaven. If *he* only knew in part, what are the odds you know the whole thing? This week is about living with questions that don't have answers yet. Which is most of them. And figuring out whether that's a problem or the design.",
+"days": [
+{
+"q": "What did Paul admit he didn't know?",
+"intro": "Read the end of 1 Corinthians 13, which most people skip because they stop at charity. Then read chapter 2, where Paul says the things of God can't be figured out by the natural man. When you read, notice he's not apologizing for not knowing. He's describing how it works.",
+"read": [
+"1 Corinthians 13:9-12",
+"1 Corinthians 2:9-14"
+],
+"journal": "What's the gospel question you most wish you had an answer to? Write it down. We're not going to answer it this week. We're going to figure out what to do with it."
+},
+{
+"q": "What was the glass?",
+"intro": "Corinth was famous for bronze mirrors. Polished metal, not glass. You could see yourself, sort of, dim and warped. That's Paul's image: you can see something real, but not clearly, and not all of it. Moses said the same thing centuries earlier. The secret things belong to God. What's revealed is ours. Read both and figure out where the line is.",
+"read": [
+"Deuteronomy 29:29",
+"Isaiah 55:8-9",
+"Job 38:1-7 (God answering Job's questions with more questions)"
+],
+"journal": "God answered Job's demand for answers with sixty questions of His own. What does that tell you about how He handles \"why\"?"
+},
+{
+"q": "What does the Book of Mormon say about not knowing?",
+"intro": "Alma says faith is *not* a perfect knowledge, on purpose. The Lord withheld some of Christ's teachings from the record to try people's faith. And D&C 121 promises all mysteries will eventually be revealed. Eventually. When you read, look for why God withholds and what He promises about it.",
+"read": [
+"Alma 32:21",
+"3 Nephi 26:9-11",
+"D&C 121:26-32",
+"2 Nephi 28:30"
+],
+"journal": "3 Nephi 26 says the Lord held things back to try your faith. Does that feel like a test or a trick? Why?"
+},
+{
+"q": "What does an apostle say about unanswered questions?",
+"intro": "President Dallin H. Oaks, October 2019. He gave a talk on the things we don't know and the things we do, and he was careful about the line.",
+"read": [
+{
+"talk": "Trust in the Lord",
+"speaker": "Dallin H. Oaks",
+"date": "October 2019",
+"section": "Read the whole thing."
+}
+],
+"takeaway": "His point is that there are things about the next life we simply haven't been told, and that guessing beyond what's revealed usually causes more harm than good. He lists questions people ask him that he can't answer. And then he says the thing that matters: you don't have to know everything to trust the One who does. Trust isn't a substitute for knowledge. It's what you do while you wait for it.",
+"journal": "Oaks lists things he doesn't know. Does it help or bother you that an apostle says \"I don't know\" out loud?"
+},
+{
+"q": "What do you do with a question that has no answer?",
+"intro": "Here's the hard part. Some questions won't get answered in this life. The Church says so. So do you shelve them, obsess over them, or leave over them? Read Jacob, who says people who look beyond the mark stumble. Read the Lord telling the Saints why He doesn't explain everything. Then read Ether 12:6 again, because it's the whole principle in one line.",
+"read": [
+"Jacob 4:8-10",
+"D&C 101:32-34",
+"Alma 40:5 (Alma shrugging at a question)",
+"Ether 12:6"
+],
+"journal": "Take the question from Day 1. Is it a question you can live with unanswered? What would it take to set it down without pretending it's gone?"
+},
+{
+"q": "How do you hold questions without dropping faith?",
+"intro": "The Lord's instruction is study *and* faith. Both. Not one instead of the other. James says ask, and the promise is real, but the timing isn't yours. Alma says nourish what you know and let the rest grow. When you read, look for what you're supposed to do with the part you *do* know while the rest stays dim.",
+"read": [
+"D&C 88:118",
+"James 1:5-6",
+"Alma 32:34-37"
+],
+"journal": "Write down three things you know clearly. Not through a glass. Clearly. Then write your Day 1 question under them and look at the ratio."
+},
+{
+"q": "What do I believe now?",
+"intro": "Back to Paul's mirror. Read it one more time. Then read your Day 1 question and your Day 6 list.",
+"read": [
+"1 Corinthians 13:12",
+{
+"journal": [
+33,
+1
+]
+},
+{
+"journal": [
+33,
+6
+]
+}
+],
+"journal": "Answer the week's question: How much are you supposed to know? And what do you do with the rest?"
+}
+]
+},
+{
+"n": 34,
+"tag": "L3",
+"question": "Why baptize for the dead?",
+"intro": "Paul mentions it once, in passing, like everybody knew what he was talking about. \"Else what shall they do which are baptized for the dead?\" The rest of Christianity has spent 2,000 years trying to explain that verse away. We built temples for it. If baptism is required and most people who ever lived never heard of it, then either God's plan has a giant hole in it or there's a way to fix it. This week is the fix.",
+"days": [
+{
+"q": "What did Paul say, and what was around it?",
+"intro": "Read the verse in context. Paul is arguing for resurrection and uses baptism for the dead as evidence: why would people do it if the dead don't rise? He assumes his readers know the practice. Then read Jesus on why baptism is required in the first place. When you read, put the two together.",
+"read": [
+"1 Corinthians 15:12-22, 29",
+"John 3:3-5",
+{
+"journal": [
+2,
+5
+]
+}
+],
+"journal": "Look at your Week 2 Day 5 answer above, the hardest part of \"baptism is required.\" Is it still the hardest part?"
+},
+{
+"q": "Did the early Church believe the dead could hear the gospel?",
+"intro": "Peter says Jesus preached to the spirits in prison between His death and resurrection. He says it twice. That's the missing piece: the dead aren't out of reach. Then read Malachi, the last prophet before the silence, promising Elijah would come to turn hearts to the fathers. When you read, notice how much of this was already in the Bible before Joseph Smith.",
+"read": [
+"1 Peter 3:18-20",
+"1 Peter 4:6",
+"Malachi 4:5-6"
+],
+"journal": "Peter says Christ preached to the dead. If that's true, what does it mean for someone you know who died without the gospel?"
+},
+{
+"q": "What did the Restoration reveal about it?",
+"intro": "Joseph Smith wrote D&C 128 as a letter, excited, explaining the doctrine. Read him. Then read Joseph F. Smith's vision of the spirit world, where he sees what the dead are doing and who's teaching them. When you read, look for who does the work on each side of the veil.",
+"read": [
+"D&C 137:5-10 (Joseph sees Alvin)",
+"D&C 128:15-18",
+"D&C 138:29-35",
+"D&C 138:57-59",
+"D&C 124:29-33"
+],
+"journal": "D&C 128:15 says they can't be made perfect without us, and we can't without them. What does that do to the idea that salvation is an individual thing?"
+},
+{
+"q": "What does the prophet say about the temple?",
+"intro": "President Russell M. Nelson, October 2021. He's built more temples than anyone in history and this is him explaining why it matters to *you*, not just the dead.",
+"read": [
+{
+"talk": "The Temple and Your Spiritual Foundation",
+"speaker": "Russell M. Nelson",
+"date": "October 2021",
+"section": "Read the whole thing."
+}
+],
+"takeaway": "His point is that the temple isn't primarily about the dead. It's the foundation for your own life. He says everything taught there points to Jesus Christ and the covenants there are what hold you up when the world shakes. And he says the work for the dead is how you become a savior on Mount Zion, which is a phrase that should mean something to you.",
+"journal": "Nelson says the temple is your foundation. When was the last time you went? What did it do for you, honestly?"
+},
+{
+"q": "Does a proxy ordinance override the dead person's choice?",
+"intro": "Here's the hard part. If you get baptized for your great-grandfather, did you just decide his religion for him? No. Read D&C 138 again, where the dead are taught and choose. The ordinance is an offer, not a verdict. But then the other question: why would God need an earthly ordinance for someone who's already dead? Read the Lord on what's bound on earth and in heaven, and Moses on why water is required for everyone.",
+"read": [
+"D&C 138:31-34 again",
+"D&C 128:8-9",
+"Moses 6:59-60",
+"Matthew 16:19"
+],
+"journal": "The dead still have to choose. Does that resolve it for you? What's the remaining question, if any?"
+},
+{
+"q": "How do you actually do it?",
+"intro": "Malachi's promise about hearts turning to fathers is the doctrine. FamilySearch is the practice. This week, find one name. One ancestor who needs work, or one name from the temple's list. When you read, notice that D&C 2 is the very first revelation in the D&C after section 1. That's how central this is.",
+"read": [
+"D&C 2",
+"3 Nephi 25:5-6",
+"Preach My Gospel, lesson 5, \"Temples and Family History\""
+],
+"journal": "Find one name this week. Write it down here. Then write when you'll take it to the temple, or who you'll give it to."
+},
+{
+"q": "What do I believe now?",
+"intro": "Back to Paul's one verse. Read it one more time. Then read your Week 2 Day 5 answer and your Day 1 answer from this week.",
+"read": [
+"1 Corinthians 15:29",
+{
+"journal": [
+2,
+5
+]
+},
+{
+"journal": [
+34,
+1
+]
+}
+],
+"journal": "Answer the week's question: Why baptize for the dead? And has the hardest part of \"baptism is required\" changed?"
+}
+]
+},
+{
+"n": 35,
+"tag": "",
+"question": "What was Paul's thorn, and why didn't God take it away?",
+"intro": "Paul had something wrong with him. He called it a thorn in the flesh. He asked God three times to remove it. God said no. Not \"not yet.\" No. And Paul's response is one of the strangest sentences in scripture: \"most gladly therefore will I glory in my infirmities.\" This week is about the thing you've asked God to fix that He hasn't, and what Paul figured out that you might not have yet.",
+"days": [
+{
+"q": "What did Paul say about it?",
+"intro": "Read the whole passage. Paul was just describing being caught up to heaven and then immediately describes the thorn, like the two are connected. He asks three times. Read what God says back, word for word. It's one sentence.",
+"read": [
+"2 Corinthians 12:1-10"
+],
+"journal": "What's your thorn? The thing you've asked God to take away more than once. Write it down."
+},
+{
+"q": "What was the thorn?",
+"intro": "Nobody knows. Paul never says. Some think it was his eyes, because he mentions the Galatians would have given him their own eyes and he wrote with big letters. Some think it was a person who kept attacking him. Some think it was a temptation. He calls it a messenger of Satan, which is strong. The point may be that he doesn't say, so anyone with any thorn can read it as theirs. Read the clues and then let it go.",
+"read": [
+"Galatians 4:13-15",
+"Galatians 6:11",
+"2 Corinthians 12:7 again",
+"Job 2:7-10"
+],
+"journal": "Paul never tells us what it was. Do you think that's on purpose? What would you lose if you knew?"
+},
+{
+"q": "What does the Book of Mormon say about weakness?",
+"intro": "Ether 12:27 is the verse. God *gives* weakness. On purpose. So you'll be humble. So His grace can work. Then Nephi, who has a thorn of his own and names it, and Alma's people, who weren't freed but were strengthened. When you read, look for what God does with the thing He doesn't remove.",
+"read": [
+"Ether 12:27",
+"2 Nephi 4:17-19",
+"Mosiah 24:14-15",
+"Alma 7:11-12"
+],
+"journal": "Ether 12:27 says weakness comes from God so you'll be humble. Has your thorn made you humble, or just tired? Be honest."
+},
+{
+"q": "What does an apostle say about thorns that don't go away?",
+"intro": "Elder Jeffrey R. Holland, October 2013. He talked about mental illness and depression from the pulpit, which almost nobody had done, and he did it as someone who'd been through it.",
+"read": [
+{
+"talk": "Like a Broken Vessel",
+"speaker": "Jeffrey R. Holland",
+"date": "October 2013",
+"section": "Read the whole thing."
+}
+],
+"takeaway": "His point is that some afflictions don't get fixed by faith alone, and pretending they should is cruel. He says get help. Take the medicine. Keep going. And he says the thing that matters: broken vessels are the kind the Lord uses. He's not waiting for you to be whole to work with you. He's working with the pieces.",
+"journal": "Holland says broken vessels are the ones God uses. Do you believe your thorn disqualifies you or qualifies you? What's the evidence?"
+},
+{
+"q": "Did God put the thorn there?",
+"intro": "Here's the hard part. Paul says the thorn was \"given\" to him. By whom? He also calls it a messenger of Satan. So did God do it, or allow it, or is that a distinction without a difference? Job's story has the same problem: Satan does it, God allows it. Read these and decide what you actually believe about where your thorn came from.",
+"read": [
+"Job 1:8-12",
+"Job 2:3-6",
+"D&C 122:7",
+"Alma 14:11"
+],
+"journal": "Does it matter to you whether God sent your thorn or just allowed it? Which one is easier to accept? Which one do you think is true?"
+},
+{
+"q": "How do you glory in an infirmity?",
+"intro": "Paul's answer sounds like denial until you read the mechanism: when I'm weak, then I'm strong, because the power is His, not mine. Read the rest of 2 Corinthians where he explains what the weakness is for. Then read Moroni on what grace does with a weak person. When you read, look for what Paul stopped trying to do.",
+"read": [
+"2 Corinthians 4:7-10, 16-18",
+"2 Corinthians 12:9-10 again",
+"Moroni 10:32",
+"Preach My Gospel, chapter 6, \"Humility\""
+],
+"journal": "Paul stopped asking God to remove it and started asking what it was for. Take your thorn from Day 1. Ask God tonight what it's for, not whether He'll remove it. Write what comes."
+},
+{
+"q": "What do I believe now?",
+"intro": "Back to Paul's three prayers and God's one answer. Read it one more time. Then read your Day 1 thorn and your Day 6 answer.",
+"read": [
+"2 Corinthians 12:7-10",
+{
+"journal": [
+35,
+1
+]
+},
+{
+"journal": [
+35,
+6
+]
+}
+],
+"journal": "Answer the week's question: Why didn't God take Paul's thorn away? And what about yours?"
+}
+]
+}
+]
